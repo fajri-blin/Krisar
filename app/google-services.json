@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "832826726183",
+    "firebase_url": "https://krisar-43aa4.firebaseio.com",
+    "project_id": "krisar-43aa4",
+    "storage_bucket": "krisar-43aa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832826726183:android:0d712c4330741f55b7fb02",
+        "android_client_info": {
+          "package_name": "com.example.krisar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832826726183-8mio5nafgqp5qpsdgctg6ka2634759b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcRKg5hMJqwtOHbrhjCDXs24KdW54UQTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832826726183-8mio5nafgqp5qpsdgctg6ka2634759b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

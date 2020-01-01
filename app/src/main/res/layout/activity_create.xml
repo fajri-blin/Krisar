@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:layout_gravity="center"
-    tools:context=".LoginActivity">
+    tools:context=".CreateActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,6 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Already Have Account ? Please Sign Up" />
+        android:text="Already Have Account ? Please SignIn" />
 
 </LinearLayout>

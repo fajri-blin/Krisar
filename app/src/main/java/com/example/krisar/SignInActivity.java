@@ -35,9 +35,9 @@ public class SignInActivity extends AppCompatActivity {
         tvSignIn = findViewById(R.id.textView);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if( mFirebaseUser != null){
                     Toast.makeText(SignInActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(SignInActivity.this, MainActivity.class);
@@ -52,7 +52,6 @@ public class SignInActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
                 if (email.isEmpty()) {
@@ -68,7 +67,7 @@ public class SignInActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(SignInActivity.this, "Login Error, Please Login", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignInActivity.this, "Login Error, Please Login Again", Toast.LENGTH_SHORT).show();
 
                             }
                             else{
@@ -77,7 +76,8 @@ public class SignInActivity extends AppCompatActivity {
                             }
                         }
                     });
-                } else {
+                }
+                else {
                     Toast.makeText(SignInActivity.this, "Error Accured", Toast.LENGTH_SHORT).show();
                 }
 
@@ -86,7 +86,7 @@ public class SignInActivity extends AppCompatActivity {
         tvSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intSignIn = new Intent(SignInActivity.this, MainActivity.class);
+                Intent intSignIn = new Intent(SignInActivity.this, CreateActivity.class);
                 startActivity(intSignIn);
             }
         });

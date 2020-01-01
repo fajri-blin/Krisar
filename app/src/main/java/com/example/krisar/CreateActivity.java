@@ -58,7 +58,8 @@ public class CreateActivity extends AppCompatActivity {
                             }
                         }
                     });
-                } else {
+                }
+                else {
                     Toast.makeText(CreateActivity.this, "Error Accured", Toast.LENGTH_SHORT).show();
                 }
             }

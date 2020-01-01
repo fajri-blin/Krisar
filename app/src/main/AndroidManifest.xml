@@ -16,12 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+/>
 
         <activity android:name=".SignInActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".CreateActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
-        <activity android:name=".InsertActivity" />
+        <activity android:name=".InsertActivity"/>
     </application>
 
 </manifest>

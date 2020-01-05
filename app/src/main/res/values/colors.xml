@@ -7,4 +7,5 @@
     <color name="colorButtonLight">#AC53AC</color>
     <color name="colorButtonPurple">#710071</color>
     <color name="colorText">#000000</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>

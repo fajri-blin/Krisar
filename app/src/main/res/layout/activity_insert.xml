@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBgPurple"
     tools:context=".InsertActivity">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Form Input"
+        android:text="Tulis Kritik dan Saran"
         android:textSize="35sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
@@ -78,6 +79,8 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="72dp"
         android:text="Submit"
+        android:background="@color/colorButtonPurple"
+        android:textColor="@color/colorWhite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inpKrisar" />
 
@@ -87,7 +90,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Cancel"
+        android:background="@color/colorButtonPurple"
+        android:textColor="@color/colorWhite"
         app:layout_constraintStart_toEndOf="@+id/btnSubmit"
         app:layout_constraintTop_toTopOf="@+id/btnSubmit" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

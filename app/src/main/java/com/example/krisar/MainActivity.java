@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        listViewKrisars = findViewById(R.id.listViewKrisars);
+        //listViewKrisars = findViewById(R.id.listViewKrisars);
 
         krisarList = new ArrayList<>();
 

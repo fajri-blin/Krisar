@@ -3,11 +3,15 @@ package com.example.krisar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,58 +20,79 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class InsertActivity extends AppCompatActivity {
-    private DatabaseReference databaseReference;
-    private FirebaseDatabase firebaseDatabase;
-    private String KrisarId;
 
     EditText inpNados, inpMatkul, inpKelas, inpKrisar;
     Button btnSubmit, btnCancel;
+
+    DatabaseReference databaseKrisar;
+    private String KrisarId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        databaseKrisar = FirebaseDatabase.getInstance().getReference("krisar");
+
         inpNados = findViewById(R.id.inpNados);
         inpMatkul = findViewById(R.id.inpMatkul);
         inpKelas = findViewById(R.id.inpKelas);
         inpKrisar = findViewById(R.id.inpKrisar);
+        btnSubmit = findViewById(R.id.btnSubmit);
+        btnCancel = findViewById(R.id.btnCancel);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("DataKrisar");
-        KrisarId = databaseReference.push().getKey();
-    }
 
-    public void addKrisar(String nados, String matkul, String kelas, String krisar) {
-        Krisar krisars = new Krisar(nados, matkul, kelas, krisar);
-        databaseReference.child("Krisars").child(KrisarId).setValue(krisars);
-    }
-
-    public void InsertData(View view) {
-        addKrisar(inpNados.getText().toString().trim(), inpMatkul.getText().toString().trim(), inpKelas.getText().toString().trim(), inpKrisar.getText().toString().trim());
-    }
-
-    public void ReadData(View view) {
-        databaseReference.child("Krisars").addValueEventListener(new ValueEventListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
-                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
-
-                        String dbnados = ds.child("nados").getValue(String.class);
-                        String dbmatkul = ds.child("matkul").getValue(String.class);
-                        String dbkelas = ds.child("kelas").getValue(String.class);
-                        String dbkrisar = ds.child("krisar").getValue(String.class);
-
-                        Log.d("TAG", dbnados+"/"+dbmatkul+"/"+dbkelas+"/"+dbkrisar);
-                    }
-                }
+            public void onClick(View v) {
+                InsertData();
             }
-
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            public void onClick(View v) {
+                Intent backmain = new Intent(InsertActivity.this, MainActivity.class);
+                startActivity(backmain);
             }
         });
     }
+    private void InsertData(){
+        String nados = inpNados.getText().toString().trim();
+        String matkul = inpMatkul.getText().toString().trim();
+        String kelas = inpKelas.getText().toString().trim();
+        String krisar = inpKrisar.getText().toString().trim();
+
+        if(nados.isEmpty()){
+            inpNados.setError("Masukkan Nama Dosen");
+            inpNados.requestFocus();
+        }
+        else if(matkul.isEmpty()){
+            inpMatkul.setError("Masukkan Nama Matakuliah");
+            inpMatkul.requestFocus();
+        }
+        else if(kelas.isEmpty()){
+            inpKelas.setError("Masukkan Kelas");
+            inpKelas.requestFocus();
+        }
+        else if(krisar.isEmpty()){
+            inpKrisar.setError("Masukkan Kritik dan Saran Anda");
+            inpKrisar.requestFocus();
+        }
+        else if(nados.isEmpty() && matkul.isEmpty() && kelas.isEmpty() && krisar.isEmpty()){
+            Toast.makeText(this, "Tidak Boleh Kosong",Toast.LENGTH_SHORT).show();
+        }
+        else if(!((nados.isEmpty() && matkul.isEmpty() && kelas.isEmpty() && krisar.isEmpty())))
+        {
+            String krisarid = databaseKrisar.push().getKey();
+
+            Krisar krisarl = new Krisar(krisarid, nados, kelas, matkul, krisar);
+
+            databaseKrisar.child(krisarid).setValue(krisarl);
+
+            Toast.makeText(this, "Data Has been Inserted", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 }

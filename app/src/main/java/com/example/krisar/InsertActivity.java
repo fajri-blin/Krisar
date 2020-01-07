@@ -91,6 +91,8 @@ public class InsertActivity extends AppCompatActivity {
             databaseKrisar.child(krisarid).setValue(krisarl);
 
             Toast.makeText(this, "Data Has been Inserted", Toast.LENGTH_SHORT).show();
+            Intent toMain = new Intent(InsertActivity.this, MainActivity.class);
+            startActivity(toMain);
         }
 
     }

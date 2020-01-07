@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSplash"
     android:gravity="center"
     android:layout_gravity="center"
     tools:context=".SignInActivity">
@@ -17,36 +18,46 @@
 
     <EditText
         android:id="@+id/inpEmail"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#000"
         android:ems="10"
         android:hint="Email"
+        android:textColorHint="#000"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/inpPass"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginTop="15dp"
-        android:layout_weight="1"
+        android:textColor="#000"
         android:ems="10"
         android:hint="Password"
+        android:textColorHint="#000"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:background="@color/colorButton"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:text="Login" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_margin="40dp"
+        android:gravity="center"
+        android:textColor="#000"
         android:text="Doesn't Have Account ? Please Create Account" />
 
 </LinearLayout>

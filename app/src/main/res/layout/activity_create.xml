@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/colorSplash"
+    android:background="@color/colorBgPurple"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".CreateActivity">
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_marginTop="30dp"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_weight="1"
@@ -21,7 +22,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName" />
@@ -31,21 +32,26 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnCreate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Create" />
+        android:layout_marginTop="70px"
+        android:background="@color/colorButtonLight"
+        android:textColor="@color/colorWhite"
+        android:textSize="10pt"
+        android:layout_width="300dp"
+        android:layout_height="20px"
+        android:layout_weight="0.7"
+        android:text="Daftar" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_marginTop="20px"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Already Have Account ? Please SignIn" />

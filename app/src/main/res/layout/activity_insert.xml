@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBgPurple"
+    android:orientation="vertical"
     tools:context=".InsertActivity">
 
     <TextView
         android:id="@+id/viewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="72dp"
         android:gravity="center"
-        android:text="Form Input"
+        android:text="Tulis Kritik dan Saran"
         android:textSize="35sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
@@ -21,52 +23,57 @@
         android:id="@+id/inpNados"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Nama Dosen"
+        android:layout_gravity="center"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewTitle" />
-
-    <EditText
-        android:id="@+id/inpMatkul"
-        android:layout_width="300sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Mata Kuliah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.279"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inpNados" />
 
     <EditText
         android:id="@+id/inpKelas"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Kelas"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inpMatkul" />
+
+    <EditText
+        android:id="@+id/inpMatkul"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Mata Kuliah"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inpNados" />
+
+
 
     <EditText
         android:id="@+id/inpKrisar"
         android:layout_width="303dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:gravity="start|top"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="24pt"
         android:hint="Kritik dan Saran"
+        android:textAlignment="textStart"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inpKelas" />
 
@@ -74,9 +81,11 @@
         android:id="@+id/btnSubmit"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/colorButtonPurple"
         android:text="Submit"
+        android:textColor="@color/colorWhite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inpKrisar" />
 
@@ -84,9 +93,12 @@
         android:id="@+id/btnCancel"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="-50dp"
+        android:background="@color/colorButtonPurple"
         android:text="Cancel"
+        android:textColor="@color/colorWhite"
         app:layout_constraintStart_toEndOf="@+id/btnSubmit"
         app:layout_constraintTop_toTopOf="@+id/btnSubmit" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

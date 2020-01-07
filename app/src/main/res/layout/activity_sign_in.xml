@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center"
     android:layout_gravity="center"
+    android:background="@color/colorBgPurple"
     tools:context=".SignInActivity">
 
     <ImageView
@@ -19,8 +20,8 @@
         android:id="@+id/inpEmail"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
+        android:layout_marginTop="40dp"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -30,23 +31,29 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:background="@color/colorButtonLight"
+        android:textColor="@color/colorWhite"
+        android:textSize="10pt"
+        android:layout_width="300dp"
+        android:layout_height="20px"
+        android:layout_weight="0.7"
+        android:layout_marginTop="30dp"
         android:text="Login" />
 
     <TextView
         android:id="@+id/textView"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="10dp"
         android:text="Doesn't Have Account ? Please Create Account" />
 
 </LinearLayout>

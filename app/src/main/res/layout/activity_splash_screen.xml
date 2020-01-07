@@ -15,14 +15,7 @@
         android:layout_height="500px"
         android:src="@drawable/logo" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Welcome"
-        android:textColor="@color/colorWhite"
-        android:textSize="32dp"/>
+
 </LinearLayout>
 
 

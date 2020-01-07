@@ -20,8 +20,8 @@
         android:id="@+id/inpEmail"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
+        android:layout_marginTop="40dp"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -31,7 +31,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -43,7 +43,8 @@
         android:textSize="10pt"
         android:layout_width="300dp"
         android:layout_height="20px"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
+        android:layout_marginTop="30dp"
         android:text="Login" />
 
     <TextView
@@ -52,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="10dp"
         android:text="Doesn't Have Account ? Please Create Account" />
 
 </LinearLayout>

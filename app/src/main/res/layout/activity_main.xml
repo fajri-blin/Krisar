@@ -37,7 +37,7 @@
         android:id="@+id/btnHistory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Daftar Eiwayat"
+        android:text="Daftar Riwayat"
         android:background="@color/colorButtonLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

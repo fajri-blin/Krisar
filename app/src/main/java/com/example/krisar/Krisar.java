@@ -19,6 +19,26 @@ public class Krisar {
         this.krisar = krisar;
     }
 
+    public void setKrisarid(String krisarid) {
+        this.krisarid = krisarid;
+    }
+
+    public void setNados(String nados) {
+        this.nados = nados;
+    }
+
+    public void setMatkul(String matkul) {
+        this.matkul = matkul;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
+    }
+
+    public void setKrisar(String krisar) {
+        this.krisar = krisar;
+    }
+
     public String getKrisarid() {
         return krisarid;
     }
@@ -34,6 +54,7 @@ public class Krisar {
     public String getKelas() {
         return kelas;
     }
+
 
     public String getKrisar() {
         return krisar;

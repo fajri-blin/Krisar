@@ -1,26 +1,22 @@
 package com.example.krisar;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 krisarList.clear();
                 for(DataSnapshot krisarSnapshot : dataSnapshot.getChildren()){
                     Krisar krisar = krisarSnapshot.getValue(Krisar.class);
-
+                    krisar.setKrisarid(krisarSnapshot.getKey());
                     krisarList.add(krisar);
                 }
 
@@ -87,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
         int id=item.getItemId();
 
         if(id==R.id.add_menu){
-            Intent Add = new Intent(MainActivity.this, InsertActivity.class);
-            startActivity(Add);
+            Intent add = new Intent(MainActivity.this, InsertActivity.class);
+            startActivity(add);
+
         }
         if(id==R.id.logout){
             FirebaseAuth.getInstance().signOut();
